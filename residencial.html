@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projetos Residenciais - Recomendador</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Projetos Residenciais e Automação</h1>
+        <p>Descubra como aplicar microcontroladores no ecossistema doméstico.</p>
+    </header>
+
+    <div class="container">
+        <a href="index.html" style="text-decoration: none; color: var(--primary); font-weight: bold;">&larr; Voltar ao Início</a>
+        
+        <h2>Aplicações Práticas</h2>
+        <div class="grid-modelos">
+            <div class="card">
+                <h3>1. Fechadura Biométrica Inteligente</h3>
+                <p>Sistemas de segurança residenciais que utilizam processamento local ou comunicação via MQTT com centrais domésticas.</p>
+            </div>
+            <div class="card">
+                <h3>2. Redes de Sensores Zigbee (Mesh)</h3>
+                <p>Criação de lâmpadas, interruptores e sensores de presença integrados que não sobrecarregam o Wi-Fi da casa.</p>
+            </div>
+        </div>
+
+        <div class="quiz-container" id="quiz-box">
+            <h2>Descubra o melhor chip para seu projeto de Casa</h2>
+            <p>Responda às perguntas abaixo:</p>
+            
+            <form id="quizForm">
+                <div class="question active" data-step="1">
+                    <h3>1. O seu projeto precisa de conexão sem fio (Wi-Fi/Bluetooth)?</h3>
+                    <div class="options">
+                        <label><input type="radio" name="q1" value="sim" required> Sim, precisa de conectividade.</label>
+                        <label><input type="radio" name="q1" value="nao"> Não, pode ser totalmente offline por cabo/pinos.</label>
+                    </div>
+                    <button type="button" class="btn next-btn" style="margin-top: 1rem;">Próxima</button>
+                </div>
+
+                <div class="question" data-step="2">
+                    <h3>2. Você pretende integrar com dispositivos inteligentes comerciais (ex: Philips Hue, Alexa via Matter/Zigbee)?</h3>
+                    <div class="options">
+                        <label><input type="radio" name="q2" value="zigbee"> Sim, usar protocolos como Zigbee ou Thread seria ótimo.</label>
+                        <label><input type="radio" name="q2" value="comum"> Não, Wi-Fi comum ou Bluetooth já resolvem.</label>
+                    </div>
+                    <button type="button" class="btn next-btn">Próxima</button>
+                </div>
+
+                <div class="question" data-step="3">
+                    <h3>3. O projeto vai envolver processamento de câmera ou reconhecimento de voz local?</h3>
+                    <div class="options">
+                        <label><input type="radio" name="q3" value="ia"> Sim, preciso de IA ou processamento de imagem/áudio.</label>
+                        <label><input type="radio" name="q3" value="basico"> Não, apenas leitura de sensores e acionamento de relés.</label>
+                    </div>
+                    <button type="button" class="btn next-btn">Próxima</button>
+                </div>
+
+                <div class="question" data-step="4">
+                    <h3>4. O dispositivo será alimentado por bateria?</h3>
+                    <div class="options">
+                        <label><input type="radio" name="q4" value="bateria"> Sim, precisa consumir pouquíssima energia.</label>
+                        <label><input type="radio" name="q4" value="tomada"> Não, ficará ligado direto na tomada.</label>
+                    </div>
+                    <button type="button" class="btn next-btn">Próxima</button>
+                </div>
+
+                <div class="question" data-step="5">
+                    <h3>5. Qual o nível de pinos de Entrada/Saída (GPIO) que você precisa?</h3>
+                    <div class="options">
+                        <label><input type="radio" name="q5" value="pouco"> Poucos pinos (até 15-20) já são suficientes.</label>
+                        <label><input type="radio" name="q5" value="muito"> Muitos pinos e suporte a telas LCD complexas.</label>
+                    </div>
+                    <button type="button" class="btn next-btn">Próxima</button>
+                </div>
+
+                <div class="question" data-step="6">
+                    <h3>6. Qual o seu orçamento ou foco de custo para o projeto?</h3>
+                    <div class="options">
+                        <label><input type="radio" name="q6" value="baixo"> O menor custo possível por unidade.</label>
+                        <label><input type="radio" name="q6" value="indiferente"> O custo não importa, desde que tenha excelente desempenho.</label>
+                    </div>
+                    <button type="button" class="btn" id="submit-quiz">Ver Resultado</button>
+                </div>
+            </form>
+
+            <div id="resultado" style="margin-top: 2rem; display: none; padding: 1rem; background: #e0f7fa; border-radius: 5px;">
+                <h3>Recomendação Ideal:</h3>
+                <p id="texto-resultado" style="font-size: 1.2rem; font-weight: bold; color: var(--primary);"></p>
+                <p id="justificativa-resultado"></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/quiz.js"></script>
+</body>
+</html>

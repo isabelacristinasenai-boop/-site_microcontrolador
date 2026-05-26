@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projetos Industriais - Recomendador</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Projetos Industriais e IIoT</h1>
+        <p>Aplicações robustas, monitoramento de ativos e automação de chão de fábrica.</p>
+    </header>
+
+    <div class="container">
+        <a href="index.html" style="text-decoration: none; color: var(--primary); font-weight: bold;">&larr; Voltar ao Início</a>
+        
+        <h2>Aplicações Práticas</h2>
+        <div class="grid-modelos">
+            <div class="card esp">
+                <h3>1. Monitoramento de Vibração e Manutenção Preditiva</h3>
+                <p>Uso de sensores industriais e algoritmos de Machine Learning coletando dados em tempo real para prever falhas em motores.</p>
+            </div>
+            <div class="card esp">
+                <h3>2. Gateways de Comunicação Modbus para Nuvem</h3>
+                <p>Leitura de dados de CLPs antigos via RS485/Modbus e envio das métricas de produção para dashboards em nuvem (AWS/Azure).</p>
+            </div>
+        </div>
+
+        <div class="quiz-container" id="quiz-box">
+            <h2>Descubra o melhor chip para seu projeto Industrial</h2>
+            <p>Responda às perguntas abaixo:</p>
+            
+            <form id="quizForm">
+                <div class="question active" data-step="1">
+                    <h3>1. O ambiente industrial possui restrição severa de ruído eletromagnético para redes Wi-Fi comuns?</h3>
+                    <div class="options">
+                        <label><input type="radio" name="q1" value="sim" required> Sim, prefiro evitar Wi-Fi tradicional ou usar cabos/protocolos mesh industriais.</label>
+                        <label><input type="radio" name="q1" value="nao"> Não, podemos usar Wi-Fi corporativo padrão sem problemas.</label>
+                    </div>
+                    <button type="button" class="btn next-btn" style="margin-top: 1rem;">Próxima</button>
+                </div>
+
+                <div class="question" data-step="2">
+                    <h3>2. Qual a necessidade de processamento de dados na ponta (Edge Computing / Machine Learning)?</h3>
+                    <div class="options">
+                        <label><input type="radio" name="q2" value="alta"> Alta. Preciso rodar redes neurais pesadas localmente no chip.</label>
+                        <label><input type="radio" name="q2" value="baixa"> Baixa. Apenas coletar dados numéricos e despachar para o servidor.</label>
+                    </div>
+                    <button type="button" class="btn next-btn">Próxima</button>
+                </div>
+
+                <div class="question" data-step="3">
+                    <h3>3. O hardware precisará controlar displays de IHM (Interface Homem-Máquina) complexos ou paralelos de alta resolução?</h3>
+                    <div class="options">
+                        <label><input type="radio" name="q3" value="sim_ihm"> Sim, o foco do dispositivo é ser uma tela de controle rica em elementos visuais.</label>
+                        <label><input type="radio" name="q3" value="nao_ihm"> Não, será um dispositivo de caixa preta ou com display simples (OLED/I2C).</label>
+                    </div>
+                    <button type="button" class="btn next-btn">Próxima</button>
+                </div>
+
+                <div class="question" data-step="4">
+                    <h3>4. Segurança de dados (Criptografia de hardware, boot seguro) é um requisito crítico para este projeto?</h3>
+                    <div class="options">
+                        <label><input type="radio" name="q4" value="critica"> Altamente Crítica. Preciso dos padrões de segurança mais recentes do mercado (como criptografia baseada em ECC).</label>
+                        <label><input type="radio" name="q4" value="padrao"> Segurança padrão já é suficiente para ambiente controlado.</label>
+                    </div>
+                    <button type="button" class="btn next-btn">Próxima</button>
+                </div>
+
+                <div class="question" data-step="5">
+                    <h3>5. O dispositivo será instalado de forma massiva em sensores alimentados por colheita de energia (Energy Harvesting) ou baterias de longa duração?</h3>
+                    <div class="options">
+                        <label><input type="radio" name="q5" value="sim_bat"> Sim, o consumo energético em modo sleep precisa ser extremamente baixo.</label>
+                        <label><input type="radio" name="q5" value="nao_bat"> Não, será alimentado diretamente pelo painel elétrico de 12V/24V da máquina.</label>
+                    </div>
+                    <button type="button" class="btn" id="submit-quiz">Ver Resultado Industrial</button>
+                </div>
+            </form>
+
+            <div id="resultado" style="margin-top: 2rem; display: none; padding: 1rem; background: #e8f5e9; border-radius: 5px;">
+                <h3>Recomendação Industrial:</h3>
+                <p id="texto-resultado" style="font-size: 1.2rem; font-weight: bold; color: #2e7d32;"></p>
+                <p id="justificativa-resultado"></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/quiz.js"></script>
+</body>
+</html>

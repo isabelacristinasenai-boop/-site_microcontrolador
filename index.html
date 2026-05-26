@@ -1,0 +1,107 @@
+:root {
+    --primary: #00979d; /* Azul Arduino */
+    --secondary: #e73525; /* Vermelho ESP32 */
+    --dark: #1e1e24;
+    --light: #f5f5f7;
+    --card-bg: #ffffff;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--light);
+    color: var(--dark);
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background: linear-gradient(135deg, var(--primary), #005f63);
+    color: white;
+    text-align: center;
+    padding: 2rem 1rem;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.grid-modelos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.card {
+    background: var-card-bg;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    border-top: 5px solid var(--primary);
+}
+
+.card.esp {
+    border-top: 5px solid var(--secondary);
+}
+
+.btn {
+    display: inline-block;
+    background: var(--primary);
+    color: white;
+    padding: 0.8rem 1.5rem;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: 0.3s;
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    opacity: 0.9;
+}
+
+.btn-secondary {
+    background: #333;
+}
+
+.quiz-container {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    margin-top: 2rem;
+}
+
+.question {
+    margin-bottom: 1.5rem;
+    display: none;
+}
+
+.question.active {
+    display: block;
+}
+
+.options label {
+    display: block;
+    background: #eee;
+    padding: 0.8rem;
+    margin: 0.5rem 0;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.options label:hover {
+    background: #ddd;
+}
+
+footer {
+    text-align: center;
+    padding: 2rem;
+    background: var(--dark);
+    color: white;
+    margin-top: 4rem;
+}
