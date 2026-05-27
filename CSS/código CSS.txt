@@ -1,0 +1,151 @@
+/* Configuração de Cores e Temas */
+:root {
+    --primary: #00979d; /* Azul Arduino */
+    --secondary: #e73525; /* Vermelho ESP32 */
+    
+    /* Padrão: Tema Claro */
+    --bg-main: #f5f5f7;
+    --bg-card: #ffffff;
+    --text-color: #1e1e24;
+    --text-muted: #444444;
+    --bg-toggle: #333333;
+    --text-toggle: #ffffff;
+    --bg-quiz-option: #eee;
+    --bg-quiz-option-hover: #ddd;
+}
+
+[data-theme="dark"] {
+    /* Modificadores: Tema Escuro */
+    --bg-main: #121214;
+    --bg-card: #1e1e24;
+    --text-color: #f5f5f7;
+    --text-muted: #a0a0a5;
+    --bg-toggle: #ffffff;
+    --text-toggle: #1e1e24;
+    --bg-quiz-option: #2a2a32;
+    --bg-quiz-option-hover: #3a3a45;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-main);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+header {
+    background: linear-gradient(135deg, var(--primary), #005f63);
+    color: white;
+    text-align: center;
+    padding: 2rem 1rem;
+    position: relative;
+}
+
+/* Botão de Alternar Tema */
+.theme-toggle-btn {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background-color: var(--bg-toggle);
+    color: var(--text-toggle);
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.grid-modelos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.card {
+    background: var(--bg-card);
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    border-top: 5px solid var(--primary);
+    transition: background-color 0.3s;
+}
+
+.card p {
+    color: var(--text-muted);
+}
+
+.card.esp {
+    border-top: 5px solid var(--secondary);
+}
+
+.btn {
+    display: inline-block;
+    background: var(--primary);
+    color: white;
+    padding: 0.8rem 1.5rem;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: 0.3s;
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    opacity: 0.9;
+}
+
+.btn-secondary {
+    background: #333;
+}
+
+/* Estilos do Quiz */
+.quiz-container {
+    background: var(--bg-card);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    margin-top: 2rem;
+    transition: background-color 0.3s;
+}
+
+.question {
+    margin-bottom: 1.5rem;
+    display: none;
+}
+
+.question.active {
+    display: block;
+}
+
+.options label {
+    display: block;
+    background: var(--bg-quiz-option);
+    padding: 0.8rem;
+    margin: 0.5rem 0;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.options label:hover {
+    background: var(--bg-quiz-option-hover);
+}
+
+footer {
+    text-align: center;
+    padding: 2rem;
+    background: #1e1e24;
+    color: white;
+    margin-top: 4rem;
+}
